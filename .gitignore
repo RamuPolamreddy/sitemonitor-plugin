@@ -8,3 +8,5 @@
 release.properties
 
 generate_release.sh
+.idea/
+*.iml

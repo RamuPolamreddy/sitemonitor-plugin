@@ -5,6 +5,9 @@
                 <f:entry title="${%URL}" help="/plugin/sitemonitor/url.html">
                     <f:textbox name="url" value="${site.url}" checkUrl="'${rootURL}/publisher/SiteMonitorRecorder/checkUrl?value='+encode(this.value)"/>
                 </f:entry>
+                <f:entry title="${%Name}" help="/plugin/sitemonitor/name.html">
+                    <f:textbox name="name" value="${site.name}" />
+                </f:entry>
                 <f:entry title="${%Success Response Codes}" help="/plugin/sitemonitor/successresponsecodes_sites.html">
             		<f:textbox name="successResponseCodes" value="${site.successResponseCodesCsv}" checkUrl="'${rootURL}/publisher/SiteMonitorRecorder/checkResponseCodes?value='+encode(this.value)"/>
         		</f:entry>

@@ -36,8 +36,13 @@ public class Site {
      * The web site URL.
      */
     private String mUrl;
-    
-    /**
+
+	/**
+	 * The web site name.
+	 */
+	private String mName;
+
+	/**
      * Timeout for this site, if there is no any timeout the process will relay 
      * in global configutrations.
      */
@@ -62,6 +67,7 @@ public class Site {
      */
     private Site(SiteBuilder builder) {
         this.mUrl = builder.url;
+        this.mName = builder.name;
         this.timeout = builder.timeout;
         this.successResponseCodes = builder.successResponseCodes;
     }
@@ -71,6 +77,13 @@ public class Site {
      */
     public final String getUrl() {
         return mUrl;
+    }
+
+    /**
+     * @return the web site name
+     */
+    public final String getName() {
+        return mName;
     }
 
 	/**
@@ -108,7 +121,9 @@ public class Site {
 	public static class SiteBuilder {
 	    
 	    private final String url;
-	    
+
+	    private String name;
+
 	    private Integer timeout;
 	    
 	    private List<Integer> successResponseCodes;
@@ -117,9 +132,15 @@ public class Site {
 	        this.url = url;
 	    }
 	    
+	    public SiteBuilder name(String name) {
+	        this.name = name;
+	        
+	        return this;
+	    }
+
 	    public SiteBuilder timeout(int timeout) {
 	        this.timeout = timeout;
-	        
+
 	        return this;
 	    }
 	    
